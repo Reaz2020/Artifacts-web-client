@@ -55,7 +55,7 @@ useEffect(() => {
            // setLoading(false)
         })}
         else{ 
-            axios.post('http://localhost:1000/logout',{},{withCredentials:true})
+            axios.get(`${import.meta.env.VITE_CLIENT_PORT}/logout`,{},{withCredentials:true})
         .then(res=>{
             console.log(res.data);
            // setLoading(false)

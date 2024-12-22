@@ -7,9 +7,10 @@ import Home from '../pages/Home'
 import ErrorPage from '../pages/ErrorPage'
 import AllProducts from '../pages/AllProducts'
 import PrivateRoute from '../components/PrivateRoute'
-import AddItem from '../pages/AddItem';
+import AddArtifact from '../pages/AddArtifact';
 import MyArtifacts from '../components/My-artifacts';
 import LikedArtifacts from '../components/Liked-Artifacts';
+import ArtifactDetails from '../pages/ArtifactsDetails';
 
 
 
@@ -34,12 +35,12 @@ const Routes = createBrowserRouter([
           },
           {
             path: 'all-products',
-            element: <PrivateRoute> <AllProducts /> </PrivateRoute>, 
+            element:  <AllProducts /> , 
           }
           ,
           {
             path: 'add-item',
-            element: <PrivateRoute> <AddItem /> </PrivateRoute>, 
+            element: <PrivateRoute> <AddArtifact /> </PrivateRoute>, 
           },
           {
             path: 'my-artifacts',
@@ -48,6 +49,10 @@ const Routes = createBrowserRouter([
           {
             path: 'liked-artifacts',
             element: <PrivateRoute> <LikedArtifacts /> </PrivateRoute>, 
+          },
+          {
+            path: '/artifact-details/:artifactId',
+            element: <PrivateRoute>  <ArtifactDetails /> </PrivateRoute>, 
           }
    
     ],
