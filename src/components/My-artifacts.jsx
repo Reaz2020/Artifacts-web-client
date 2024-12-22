@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from 'sweetalert2';
 
 const MyArtifacts = () => {
   const axiosSecure = useAxiosSecure();
@@ -42,6 +43,41 @@ const MyArtifacts = () => {
     navigate(`/update-artifact/${id}`);
   };
 
+  const handleDelete = (id) => {
+    // Show confirmation alert before deleting
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This action cannot be undone.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform the deletion if confirmed
+        axiosSecure
+          .delete(`/delete-artifact/${id}`)
+          .then((response) => {
+            setArtifacts(artifacts.filter(artifact => artifact._id !== id)); // Remove artifact from state
+            Swal.fire(
+              'Deleted!',
+              'Your artifact has been deleted.',
+              'success'
+            );
+          })
+          .catch((err) => {
+            console.error("Error deleting artifact:", err);
+            Swal.fire(
+              'Error!',
+              'Failed to delete the artifact. Please try again.',
+              'error'
+            );
+          });
+      }
+    });
+  };
+
   return (
     <div>
       <h1 className="text-2xl font-semibold mb-4">My Artifacts</h1>
@@ -66,7 +102,7 @@ const MyArtifacts = () => {
                 >
                   Update
                 </button>
-                <button className="btn bg-orange-500 text-white px-4 py-2">Delete</button>
+                <button className="btn bg-orange-500 text-white px-4 py-2" onClick={() => handleDelete(artifact._id)}>Delete</button>
               </div>
             </div>
           ))}
