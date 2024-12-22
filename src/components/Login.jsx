@@ -194,7 +194,7 @@ const handleGoogleSignIn = () => {
                 <button>Register</button>
               </NavLink>
             </div>
-            <div className="w-64 h-64 border-2 bg-slate-400 "></div>
+           
             
         </div>
            );

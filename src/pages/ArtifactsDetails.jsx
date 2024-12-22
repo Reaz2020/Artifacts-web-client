@@ -14,7 +14,7 @@ const ArtifactDetails = () => {
   useEffect(() => {
     console.log("Fetching artifact with ID:", artifactId);
     // Make the API call to fetch the artifact details by ID
-    axiosSecure.get(`${import.meta.env.VITE_CLIENT_PORT}/artifact-details/${artifactId}`)
+    axios.get(`${import.meta.env.VITE_CLIENT_PORT}/artifact-details/${artifactId}`)
       .then(res => {
         setArtifact(res.data); // Store the artifact data in state
         setLoading(false); // Set loading to false once data is fetched
@@ -55,7 +55,7 @@ const ArtifactDetails = () => {
           <p><strong className="font-semibold">Discovered By:</strong> {artifact.discoveredBy}</p>
           <p><strong className="font-semibold">Present Location:</strong> {artifact.presentLocation}</p>
           <p><strong className="font-semibold">Owner Email:</strong> {artifact.owner_email}</p>
-          <p><strong className="font-semibold">Like Count:</strong> {artifact.like_count.$numberInt}</p>
+          <p><strong className="font-semibold">Like Count:</strong> {artifact.like_count}</p>
           <div><button className='btn bg-purple-500'>Like this </button></div>
         </div>
        
