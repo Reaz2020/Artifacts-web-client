@@ -3,29 +3,51 @@ import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import useAxiosSecure from "../hooks/useAxiosSecure";
-import { Link } from "react-router-dom";  // Import Link for navigation
+import { Link } from "react-router-dom";
 
 const AllArtifacts = () => {
     const { user, loading } = useContext(AuthContext);
     const [artifacts, setArtifacts] = useState([]);
+    const [searchQuery, setSearchQuery] = useState(""); // State for search query
     const axiosSecure = useAxiosSecure();
 
     // Fetch items from the API
     useEffect(() => {
         const fetchItems = async () => {
-      
-
-            axios.get(`${import.meta.env.VITE_CLIENT_PORT}/artifacts`).then(res => {
-                setArtifacts(res.data); // Set artifacts instead of products
-            });
-            
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_CLIENT_PORT}/artifacts`, {
+                    params: {
+                        name: searchQuery // Send search query to the backend
+                    }
+                });
+                setArtifacts(response.data); // Set artifacts based on the search result
+            } catch (error) {
+                console.error("Error fetching artifacts:", error);
+            }
         };
+
         fetchItems();
-    }, []);
+    }, [searchQuery]); // Re-fetch whenever the search query changes
+
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value); // Update the search query state
+    };
 
     return (
         <div className="p-8">
             <h2 className="text-center text-2xl font-bold mb-6">All Artifacts</h2>
+
+            {/* Search input */}
+            <div className="mb-6">
+                <input
+                    type="text"
+                    placeholder="Search by Artifact Name"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="w-full px-4 py-2 border rounded-md"
+                />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {artifacts.map((artifact) => (
                     <div
@@ -43,7 +65,7 @@ const AllArtifacts = () => {
                         <p className="text-gray-600">Discovered At: {artifact.discoveredAt}</p>
                         <p className="text-gray-600">Discovered By: {artifact.discoveredBy}</p>
                         <p className="mt-2">{artifact.description}</p>
-                        <p className="mt-2">liked by <span className="text-red-500">{artifact.like_count}</span> person</p>
+                        <p className="mt-2">Liked by <span className="text-red-500">{artifact.like_count}</span> person</p>
 
                         {/* "Details" Button to navigate to Artifact Details page */}
                         <Link 
