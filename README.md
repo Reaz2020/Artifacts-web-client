@@ -1,8 +1,26 @@
-# React + Vite
+Artifact Atlas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Purpose
 
-Currently, two official plugins are available:
+Artifact Atlas is a web-based platform designed to manage and interact with artifacts. It allows users to add, view, like, and engage with various artifacts, providing a seamless experience for exploring and contributing to the artifact collection.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live URL
+
+Artifact Atlas Live URL
+
+Key Features
+
+Add Artifacts: Users can add new artifacts to the platform.
+View Artifact Information: Users can view detailed information about each artifact.
+Like and Unlike Artifacts: Users can like or unlike artifacts, fostering engagement.
+View Like Count: Users can see how many people have liked each artifact.
+Interact with Liked Artifacts: Users can interact with artifacts they have liked.
+View Added Artifacts: Users can view the artifacts they have personally added.
+npm Packages Used
+
+axios: Used for making HTTP requests to interact with APIs.
+react-router-dom: Enables dynamic routing in the application.
+sweetalert2: Used for creating customizable and user-friendly alert dialogs.
+swiper: A modern mobile touch slider for creating responsive sliders.
+slick-carousel: Used for implementing responsive sliders and carousels.
+jsonwebtoken: Used for generating and verifying JWT tokens for authentication and secure communication.
