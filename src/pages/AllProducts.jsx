@@ -43,6 +43,7 @@ const AllArtifacts = () => {
                         <p className="text-gray-600">Discovered At: {artifact.discoveredAt}</p>
                         <p className="text-gray-600">Discovered By: {artifact.discoveredBy}</p>
                         <p className="mt-2">{artifact.description}</p>
+                        <p className="mt-2">liked by <span className="text-red-500">{artifact.like_count}</span> person</p>
 
                         {/* "Details" Button to navigate to Artifact Details page */}
                         <Link 

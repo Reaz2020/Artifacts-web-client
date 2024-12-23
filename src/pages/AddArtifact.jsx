@@ -39,7 +39,8 @@ const AddArtifact = () => {
             discoveredAt,
             discoveredBy,
             presentLocation,
-            like_count: 0, // Add like_count with initial value 0
+            like_count: 0, // Initialize like_count with 0
+            likers: [], // Initialize likers as an empty array
             owner_email: user?.email, // To track who added this artifact
             owner_name: user?.displayName // Add owner name (displayName)
         };

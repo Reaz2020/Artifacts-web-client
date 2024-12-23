@@ -53,7 +53,7 @@ const Routes = createBrowserRouter([
           },
           {
             path: '/artifact-details/:artifactId',
-            element: <ArtifactDetails /> ,
+            element: <PrivateRoute><ArtifactDetails /></PrivateRoute> ,
           },
           {
             path: 'update-artifact/:artifactId',

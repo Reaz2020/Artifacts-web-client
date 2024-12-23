@@ -2,8 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
-
-
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [userDataToShowOnNavbar, setUserDataToShowOnNavbar] = useState(null);
@@ -23,15 +22,29 @@ const Navbar = () => {
   }, [user]);
 
   const handleLogout = async () => {
-    try {
-      await axios.get(`${import.meta.env.VITE_CLIENT_PORT}/logout`, {
-        withCredentials: true,
-      });
-      signOutUser()
-      navigate("/login");
-    } catch (error) {
-      console.error("Error logging out:", error);
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out of your account.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, log me out!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await axios.get(`${import.meta.env.VITE_CLIENT_PORT}/logout`, {
+            withCredentials: true,
+          });
+          signOutUser();
+          navigate("/login");
+          Swal.fire("Logged Out!", "You have been logged out.", "success");
+        } catch (error) {
+          console.error("Error logging out:", error);
+          Swal.fire("Error!", "Failed to log out. Please try again.", "error");
+        }
+      }
+    });
   };
 
   return (
@@ -62,15 +75,37 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <li><a href="#">Item 1</a></li>
-            <li tabIndex={0}>
-              <a href="#">Parent</a>
-              <ul className="p-2">
-                <li><a href="#">Submenu 1</a></li>
-                <li><a href="#">Submenu 2</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Item 3</a></li>
+            <NavLink to="/" className="block px-4 py-2 hover:bg-gray-200 rounded">
+              Home
+            </NavLink>
+            <NavLink
+              to="/all-products"
+              className="block px-4 py-2 hover:bg-gray-200 rounded"
+            >
+              All Artifacts
+            </NavLink>
+            {user && (
+              <>
+                <NavLink
+                  to="/add-item"
+                  className="block px-4 py-2 hover:bg-gray-200 rounded"
+                >
+                  Add Artifact
+                </NavLink>
+                <NavLink
+                  to="/my-artifacts"
+                  className="block px-4 py-2 hover:bg-gray-200 rounded"
+                >
+                  My Artifacts
+                </NavLink>
+                <NavLink
+                  to="/liked-artifacts"
+                  className="block px-4 py-2 hover:bg-gray-200 rounded"
+                >
+                  Liked Artifacts
+                </NavLink>
+              </>
+            )}
           </ul>
         </div>
         <h1 className="text-blue-800 text-2xl md:text-4xl font-bold tracking-wide drop-shadow-lg bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
@@ -136,7 +171,6 @@ const Navbar = () => {
                 >
                   My Profile
                 </button>
-                {/* Nested Profile Dropdown */}
                 {isProfileDropdownVisible && (
                   <div className="mt-2 bg-white border shadow-lg rounded-md w-48">
                     <NavLink
