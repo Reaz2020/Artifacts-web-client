@@ -108,7 +108,7 @@ const Register = () => {
               </h2>
 
                 <form onSubmit={handleRegister}>
-                    <label htmlFor="name">Name (Optional):</label>
+                    <label htmlFor="name">Name :</label>
                     <input
                         type="text"
                         id="name"

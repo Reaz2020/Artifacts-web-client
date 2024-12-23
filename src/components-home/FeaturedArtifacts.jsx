@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Loading from '../components/Loading'
+import { Link } from "react-router-dom";
 
 const FeaturedArtifacts = () => {
   const [artifacts, setArtifacts] = useState([]);
@@ -74,6 +75,7 @@ const FeaturedArtifacts = () => {
           ))}
         </div>
       )}
+      <div className=" text-center "><Link className="btn bg-orange-400" to={'/all-products'}>See All Artifacts </Link></div>
     </div>
   );
 };

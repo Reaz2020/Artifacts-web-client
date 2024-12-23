@@ -51,13 +51,13 @@ useEffect(() => {
             const user={email:currentUser?.email}  // i have to explicitly set this emial inside user b caz im cheking it in the back end 
             axios.post(`${import.meta.env.VITE_CLIENT_PORT}/jwt`,user,{withCredentials:true})
         .then(res=>{
-            console.log(res.data); 
+            // console.log(res.data); 
            // setLoading(false)
         })}
         else{ 
             axios.get(`${import.meta.env.VITE_CLIENT_PORT}/logout`,{},{withCredentials:true})
         .then(res=>{
-            console.log(res.data);
+            // console.log(res.data);
            // setLoading(false)
         })}
         setLoading(false)
