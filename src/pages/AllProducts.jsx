@@ -11,7 +11,7 @@ const AllArtifacts = () => {
     const [searchQuery, setSearchQuery] = useState(""); // State for search query
     const axiosSecure = useAxiosSecure();
 
-    // Fetch items from the API
+    // Fetching items from the API
     useEffect(() => {
         const fetchItems = async () => {
             try {
@@ -38,13 +38,13 @@ const AllArtifacts = () => {
             <h2 className="text-center text-2xl font-bold mb-6">All Artifacts</h2>
 
             {/* Search input */}
-            <div className="mb-6">
+            <div className="mb-6  flex justify-center items-center">
                 <input
                     type="text"
                     placeholder="Search by Artifact Name"
                     value={searchQuery}
                     onChange={handleSearchChange}
-                    className="w-full px-4 py-2 border rounded-md"
+                    className=" px-4 py-2 border-2 border-sky-800 rounded-md w-1/2"
                 />
             </div>
 
