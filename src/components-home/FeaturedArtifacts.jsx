@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Loading from '../components/Loading'
 
 const FeaturedArtifacts = () => {
   const [artifacts, setArtifacts] = useState([]);
@@ -32,7 +33,7 @@ const FeaturedArtifacts = () => {
   };
 
   if (!Array.isArray(artifacts)) {
-    return <div>Loading featured artifacts...</div>;
+    return <div><Loading></Loading></div>;
   }
 
   return (
@@ -42,7 +43,7 @@ const FeaturedArtifacts = () => {
       </h2>
       {artifacts.length === 0 ? (
         <div className="text-center text-gray-600">
-          No artifacts available at the moment. Please check back later!
+         <Loading></Loading>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

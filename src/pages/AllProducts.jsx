@@ -4,9 +4,10 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 
 const AllArtifacts = () => {
-    const { user, loading } = useContext(AuthContext);
+    const { user, loading ,setLoading} = useContext(AuthContext);
     const [artifacts, setArtifacts] = useState([]);
     const [searchQuery, setSearchQuery] = useState(""); // State for search query
     const axiosSecure = useAxiosSecure();
@@ -21,6 +22,7 @@ const AllArtifacts = () => {
                     }
                 });
                 setArtifacts(response.data); // Set artifacts based on the search result
+                setLoading(false)
             } catch (error) {
                 console.error("Error fetching artifacts:", error);
             }
@@ -32,6 +34,9 @@ const AllArtifacts = () => {
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value); // Update the search query state
     };
+
+
+    if(loading){return <Loading></Loading> }
 
     return (
         <div className="p-8">

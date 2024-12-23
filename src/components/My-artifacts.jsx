@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from 'sweetalert2';
+import Loading from './Loading';
 
 const MyArtifacts = () => {
   const axiosSecure = useAxiosSecure();
@@ -31,7 +32,7 @@ const MyArtifacts = () => {
   }, [user, axiosSecure]);
 
   if (loading) {
-    return <div>Loading...</div>; // Show loading message
+    return <div><Loading></Loading> </div>; // Show loading message
   }
 
   if (error) {

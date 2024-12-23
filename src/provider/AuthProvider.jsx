@@ -108,7 +108,7 @@ function signOutUser(){
        
         emailPasswordSignIn, 
         googleSignIn,signOutUser,
-        setUser,
+        setUser,setLoading
     
     };
 
