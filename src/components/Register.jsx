@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import { updateProfile } from "firebase/auth"; // Make sure updateProfile is imported
 import { auth } from '../firebase/firebase.config'; // Import the auth object
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const { user, createUser, setUser } = useContext(AuthContext); // Assuming `createUser` and `setUser` are in context
@@ -99,7 +100,13 @@ const Register = () => {
                 textAlign: 'center',
                 color: '#fff'
             }}>
-                <h2>Register</h2>
+            <h2>
+                 Already Registered? {' '}
+                 <Link className="text-red-500" to="/login" >
+                       Login
+                  </Link>
+              </h2>
+
                 <form onSubmit={handleRegister}>
                     <label htmlFor="name">Name (Optional):</label>
                     <input
@@ -190,6 +197,10 @@ const Register = () => {
                     </button>
                 </form>
             </div>
+           
+
+
+
         </div>
     );
 };
