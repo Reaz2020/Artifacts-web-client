@@ -5,7 +5,7 @@ import FeaturedArtifacts from  "../components-home/FeaturedArtifacts";
 const Home = () => {
     return (    <div>
         <h1 className="text-4xl font-bold text-center my-6">Welcome to Artifact Atlas</h1>
-        <section className="text-4xl border-2 my-8">
+        <section className="text-4xl border-2 my-8 ">
             <Banner></Banner>
         </section>
         <section className="text-4xl border-2">

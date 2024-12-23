@@ -1,5 +1,4 @@
 
-
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
@@ -7,7 +6,10 @@ import {  useNavigate } from "react-router-dom";
 
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:1000',
+  baseURL: `${import.meta.env.VITE_CLIENT_PORT}`,
+  // baseURL: 'http://localhost:1000',
+
+
   withCredentials: true
 });
 

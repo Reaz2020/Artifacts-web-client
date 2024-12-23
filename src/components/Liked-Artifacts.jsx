@@ -12,11 +12,11 @@ const LikedArtifacts = () => {
     if (user) {
       // Fetch liked artifacts when the user is available
       axios
-        .post("http://localhost:1000/liked-artifacts", { email: user.email })
-        .then((response) => {
-          setLikedArtifacts(response.data.artifacts); // Set the artifacts in the state
+      .post(`${import.meta.env.VITE_CLIENT_PORT}/liked-artifacts`, { email: user.email })
+      .then((response) => {
+          setLikedArtifacts(response.data.artifacts); 
           setLoading(false); // Set loading to false after data is fetched
-        })
+      })
         .catch((err) => {
           setError("Failed to fetch liked artifacts");
           setLoading(false);
