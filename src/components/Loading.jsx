@@ -1,5 +1,5 @@
 const Loading = () => {
-    return ( <div>
+    return ( <div className="text-center text-red-600 text-6xl">
         LOADING . . . . . 
     </div> );
 }

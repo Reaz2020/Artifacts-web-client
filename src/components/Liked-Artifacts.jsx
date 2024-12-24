@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
+import Loading from '../components/Loading'
 
 const LikedArtifacts = () => {
   const { user } = useContext(AuthContext);
@@ -26,7 +27,7 @@ const LikedArtifacts = () => {
 
   // Display loading, error, or the list of liked artifacts
   if (loading) {
-    return <div>Loading liked artifacts...</div>;
+    return <div><Loading></Loading> </div>;
   }
 
   if (error) {
@@ -35,22 +36,30 @@ const LikedArtifacts = () => {
 
   return (
     <div>
-      <h2>Liked Artifacts</h2>
+      <h2 className="text-center text-semibold text-2xl font-serif ">Liked Artifacts</h2>
       {likedArtifacts.length === 0 ? (
         <p>You haven't liked any artifacts yet.</p>
       ) : (
-<ul className=" md:text-center">
+<ul className=" text-center ">
   {likedArtifacts.map((artifact) => (
-    <li key={artifact._id} style={{ border: "1px solid #ccc", margin: "10px", padding: "10px", borderRadius: "5px" }}>
-       <h3>{artifact.artifactName}</h3>
-      <img className=""
+    <li className=" border-2 flex items-center justify-center" key={artifact._id} style={{ margin: "10px", padding: "10px", borderRadius: "5px" }}>
+      
+     <div className="flex items-center justify-center ">
+       
+     
+      <img className=" border-2 p-2"
         src={artifact?.artifactImage } 
         alt={artifact.name} 
-        style={{ width: "150px", height: "150px", objectFit: "cover", borderRadius: "5px" }} 
-      />
-      <h3>{artifact.name}</h3>
-      <p>{artifact.description}</p>
-      <p><strong>Likes:</strong> {artifact.like_count}</p>
+        style={{ width: "250px", height: "250px", objectFit: "cover", borderRadius: "5px" }} 
+       />
+     </div>
+    <div className="text-start mx-2 ">
+    <h3> Name: {artifact.artifactName}</h3>
+    <h3> Discovered by: {artifact.discoveredBy}</h3>
+      <h3> Owner: {artifact?.owner_name || 'Artifact Atlas'}</h3>
+     
+      <p><strong>Total Likes:</strong> {artifact.like_count}</p>
+    </div>
     </li>
   ))}
 </ul>
