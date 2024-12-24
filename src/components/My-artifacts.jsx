@@ -66,6 +66,7 @@ const MyArtifacts = () => {
               'Your artifact has been deleted.',
               'success'
             );
+            navigate('/all-products');
           })
           .catch((err) => {
             console.error("Error deleting artifact:", err);
@@ -95,7 +96,7 @@ const MyArtifacts = () => {
               />
               <h3 className="text-lg font-semibold">{artifact.artifactName}</h3>
               <p className="text-sm text-gray-600">{artifact.description}</p>
-              <p className="mt-2 font-bold">${artifact.price}</p>
+       
               <div>
                 <button
                   className="btn bg-green-600 text-white px-4 py-2 mr-2"
