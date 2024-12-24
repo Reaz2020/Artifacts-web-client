@@ -62,8 +62,8 @@ const FeaturedArtifacts = () => {
               <p className="text-gray-600 text-sm my-2"> Description : 
                 {artifact.historicalContext}
               </p>
-              <p className="text-purple-500 font-semibold mb-4">
-                Liked by: {artifact.like_count}
+              <p className="text-xs text-semibold mb-4 ">
+                Liked by  {artifact.like_count}
               </p>
               <button
                 className="btn bg-purple-500 text-white w-full"

@@ -1,6 +1,7 @@
 import InteractiveMap from "../components-home/InteractiveMap";
 import Banner from "../components-home/Banner";
 import FeaturedArtifacts from  "../components-home/FeaturedArtifacts";
+import TopArtifacts from "../components-home/TopArtifacs";
 
 const Home = () => {
     return (    <div>
@@ -14,6 +15,9 @@ const Home = () => {
         <section>
           <h2 className="text-2xl font-semibold text-center my-4">Interactive Map of Historical Artifacts</h2>
           <InteractiveMap />
+        </section>
+        <section>
+          <TopArtifacts></TopArtifacts>
         </section>
       </div>);
 }
