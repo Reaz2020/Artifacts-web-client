@@ -16,8 +16,9 @@ const ArtifactDetails = () => {
   const [hasLiked, setHasLiked] = useState(false); // State to track like button click
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_CLIENT_PORT}/artifact-details/${artifactId}`)
+    axiosSecure
+      // .get(`${import.meta.env.VITE_CLIENT_PORT}/artifact-details/${artifactId}`)
+      .get(`/artifact-details/${artifactId}`)
       .then(res => {
         setArtifact(res.data); // Store the artifact data in state
         setLoading(false); // Set loading to false once data is fetched
