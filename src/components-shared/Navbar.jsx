@@ -109,7 +109,7 @@ const Navbar = () => {
           </ul>
         </div>
         <h1 className="text-blue-800 text-2xl md:text-4xl font-bold tracking-wide drop-shadow-lg bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-          Artifact Atlas
+        <div className="flex justify-center items-center"> <img className="w-8 h-8 rounded-full" src="https://i.ibb.co/wrQYNvh/logo.png" alt="" />  Artifact Atlas </div>
         </h1>
       </div>
 

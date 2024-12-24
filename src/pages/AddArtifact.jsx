@@ -210,7 +210,7 @@ const AddArtifact = () => {
                     </div>
 
                     <div>
-                        <label htmlFor="userName" className="block text-lg font-medium text-gray-700">User Name:</label>
+                        <label htmlFor="userName" className="block text-lg font-medium text-gray-700">Name:</label>
                         <input
                             type="text"
                             id="userName"
