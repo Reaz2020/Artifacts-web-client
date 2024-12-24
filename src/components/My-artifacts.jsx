@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from 'sweetalert2';
@@ -11,7 +11,7 @@ const MyArtifacts = () => {
   const [artifacts, setArtifacts] = useState([]); // State to store fetched artifacts
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(null); // Error state
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     if (user && user.email) {
@@ -29,7 +29,7 @@ const MyArtifacts = () => {
       setError("User is not authenticated.");
       setLoading(false);
     }
-  }, [user, axiosSecure]);
+  }, [user]);
 
   if (loading) {
     return <div><Loading></Loading> </div>; // Show loading message
@@ -82,7 +82,7 @@ const MyArtifacts = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold mb-4">My Artifacts</h1>
+      <h1 className="text-2xl font-semibold mb-4">My added Artifacts</h1>
       {artifacts.length === 0 ? (
         <p>No artifacts added by you yet.</p>
       ) : (

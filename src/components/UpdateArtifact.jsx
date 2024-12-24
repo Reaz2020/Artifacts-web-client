@@ -4,8 +4,10 @@ import { useParams } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from 'react-router-dom'; 
 
 const UpdateArtifact = () => {
+  const navigate = useNavigate(); 
   const artifactTypes = ["Tools", "Weapons", "Documents", "Writings", "Other"];
   const { artifactId } = useParams(); // Getting the artifactId from the URL
   const { user } = useContext(AuthContext); // Geting user details from context
@@ -23,6 +25,8 @@ const UpdateArtifact = () => {
         setArtifact(response.data); // Seting fetched artifact details
         setUpdatedData(response.data); // Initialize updatedData with fetched data
         setLoading(false); // Stop loading
+      
+      
       })
       .catch((err) => {
         setError(err.message); // Seting error if fetch fails
@@ -51,10 +55,11 @@ const UpdateArtifact = () => {
       confirmButtonText: "Yes, update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios
-          .put(`${import.meta.env.VITE_CLIENT_PORT}/update-artifact/${artifactId}`, updatedData)
+        axiosSecure
+          .put(`/update-artifact/${artifactId}`, updatedData)
           .then((response) => {
             Swal.fire("Updated!", "Artifact has been updated successfully.", "success");
+            navigate("/my-artifacts");
           })
           .catch((err) => {
             console.error("Error updating artifact:", err);

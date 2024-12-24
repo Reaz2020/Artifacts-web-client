@@ -31,7 +31,7 @@ const ArtifactDetails = () => {
 
   useEffect(() => {
     if (user) {
-      axiosSecure
+      axiosSecure //in the artifatct detail page 
         .post('/check-liked-artifact', {
           artifactId, // Send the artifactId
           email: user.email // Send the user's email

@@ -2,8 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
 import Loading from '../components/Loading'
+import useAxiosSecure from "../hooks/useAxiosSecure"; 
 
 const LikedArtifacts = () => {
+  const axiosSecure = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const [likedArtifacts, setLikedArtifacts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,8 +14,8 @@ const LikedArtifacts = () => {
   useEffect(() => { 
     if (user) {
       // Fetch liked artifacts when the user is available
-      axios
-      .post(`${import.meta.env.VITE_CLIENT_PORT}/liked-artifacts`, { email: user.email })
+      axiosSecure
+      .post(`/liked-artifacts`, { email: user.email })
       .then((response) => {
           setLikedArtifacts(response.data.artifacts); 
           setLoading(false); // Set loading to false after data is fetched

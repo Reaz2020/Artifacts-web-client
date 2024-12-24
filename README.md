@@ -6,7 +6,7 @@ Artifact Atlas is a web-based platform designed to manage and interact with arti
 
 Live URL
 
-Artifact Atlas Live URL
+(https://artifact-atlas-ba495.web.app/)
 
 Key Features
 
