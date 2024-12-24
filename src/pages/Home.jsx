@@ -5,7 +5,7 @@ import TopArtifacts from "../components-home/TopArtifacs";
 
 const Home = () => {
     return (    <div>
-        <h1 className="text-4xl font-bold text-center my-6">Welcome to Artifact Atlas</h1>
+        <h1 className="text-4xl font-bold text-center my-6">New Collection Limited Edition </h1>
         <section className="text-4xl border-2 my-8 ">
             <Banner></Banner>
         </section>

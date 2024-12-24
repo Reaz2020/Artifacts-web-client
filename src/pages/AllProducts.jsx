@@ -5,12 +5,22 @@ import { useState, useEffect } from "react";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AllArtifacts = () => {
     const { user, loading ,setLoading} = useContext(AuthContext);
     const [artifacts, setArtifacts] = useState([]);
     const [searchQuery, setSearchQuery] = useState(""); // State for search query
     const axiosSecure = useAxiosSecure();
+
+        // Initialize AOS
+        useEffect(() => {
+            AOS.init({
+                duration: 2000, 
+                once: true, // Only animate once when in view
+            });
+        }, []);
 
     // Fetching items from the API
     useEffect(() => {
@@ -53,7 +63,7 @@ const AllArtifacts = () => {
                 />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="zoom-in-up">
                 {artifacts.map((artifact) => (
                     <div
                         key={artifact._id}

@@ -16,8 +16,10 @@ Like and Unlike Artifacts: Users can like or unlike artifacts, fostering engagem
 View Like Count: Users can see how many people have liked each artifact.
 Interact with Liked Artifacts: Users can interact with artifacts they have liked.
 View Added Artifacts: Users can view the artifacts they have personally added.
+
 npm Packages Used
 
+AOS 
 axios: Used for making HTTP requests to interact with APIs.
 react-router-dom: Enables dynamic routing in the application.
 sweetalert2: Used for creating customizable and user-friendly alert dialogs.

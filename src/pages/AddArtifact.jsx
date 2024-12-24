@@ -85,7 +85,14 @@ const AddArtifact = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100 py-6">
+        <div className="flex justify-center items-center min-h-screen bg-gray-100 py-6 "
+
+        style={{
+            backgroundImage: "url('https://i.ibb.co/7kHfSHL/Screenshot-2024-12-24-at-00-55-50.png')",
+        }}
+        
+        
+        >
             <div className="w-full max-w-2xl bg-white p-8 rounded-lg shadow-lg">
                 <h2 className="text-3xl font-bold text-center text-gray-700 mb-8">Add New Artifact</h2>
 
