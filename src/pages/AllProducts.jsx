@@ -14,7 +14,7 @@ const AllArtifacts = () => {
     const [searchQuery, setSearchQuery] = useState(""); // State for search query
     const axiosSecure = useAxiosSecure();
 
-        // Initialize AOS
+        // Initializing AOS
         useEffect(() => {
             AOS.init({
                 duration: 2000, 

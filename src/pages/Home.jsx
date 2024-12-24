@@ -4,9 +4,19 @@ import FeaturedArtifacts from "../components-home/FeaturedArtifacts";
 import TopArtifacts from "../components-home/TopArtifacs";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
+       // Initializing AOS
+       useEffect(() => {
+        AOS.init({
+            duration: 2000, 
+            once: true, // Only animate once when in view
+        });
+    }, []);
 
   return (
     <div>
@@ -102,7 +112,7 @@ const Home = () => {
       <section className="text-4xl border-2 my-8">
         <Banner />
       </section>
-      <section className="text-4xl border-2">
+      <section className="text-4xl border-2 " data-aos="zoom-in-up">
         <FeaturedArtifacts />
       </section>
       <section>
