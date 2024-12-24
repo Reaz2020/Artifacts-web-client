@@ -3,29 +3,30 @@ import { AuthContext } from "../provider/AuthProvider";
 import { useParams } from "react-router-dom";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import axios from "axios";
-import Swal from "sweetalert2"; // Import SweetAlert2
+import Swal from "sweetalert2";
 
 const UpdateArtifact = () => {
-  const { artifactId } = useParams(); // Get the artifactId from the URL
-  const { user } = useContext(AuthContext); // Get user details from context
-  const axiosSecure = useAxiosSecure(); // Secure Axios instance
-  const [artifact, setArtifact] = useState(null); // State to store artifact details
+  const artifactTypes = ["Tools", "Weapons", "Documents", "Writings", "Other"];
+  const { artifactId } = useParams(); // Getting the artifactId from the URL
+  const { user } = useContext(AuthContext); // Geting user details from context
+  const axiosSecure = useAxiosSecure(); // Secureing Axios instance
+  const [artifact, setArtifact] = useState(null); // Statting to store artifact details
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(null); // Error state
   const [updatedData, setUpdatedData] = useState({}); // State to manage updated data
 
   useEffect(() => {
-    // Fetch artifact details using artifactId
+    // Fetching artifact details using artifactId
     axiosSecure
       .get(`/update-artifact/${artifactId}`)
       .then((response) => {
-        setArtifact(response.data); // Set fetched artifact details
+        setArtifact(response.data); // Seting fetched artifact details
         setUpdatedData(response.data); // Initialize updatedData with fetched data
         setLoading(false); // Stop loading
       })
       .catch((err) => {
-        setError(err.message); // Set error if fetch fails
-        setLoading(false); // Stop loading
+        setError(err.message); // Seting error if fetch fails
+        setLoading(false); // Stoping loading
       });
   }, [artifactId]);
 
@@ -40,7 +41,6 @@ const UpdateArtifact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Show confirmation alert before updating
     Swal.fire({
       title: "Are you sure?",
       text: "Do you really want to update this artifact?",
@@ -51,7 +51,6 @@ const UpdateArtifact = () => {
       confirmButtonText: "Yes, update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Send updated data to the backend if confirmed
         axios
           .put(`${import.meta.env.VITE_CLIENT_PORT}/update-artifact/${artifactId}`, updatedData)
           .then((response) => {
@@ -66,11 +65,11 @@ const UpdateArtifact = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>; // Show loading state
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>; // Show error message
+    return <div>Error: {error}</div>;
   }
 
   return (
@@ -89,6 +88,42 @@ const UpdateArtifact = () => {
               className="w-full border rounded-md px-3 py-2"
               required
             />
+          </div>
+
+          {/* Artifact Image */}
+          <div className="mb-4">
+            <label className="block text-sm font-medium mb-1">Artifact Image (URL)</label>
+            <input
+              type="url"
+              name="artifactImage"
+              value={updatedData.artifactImage || ""}
+              onChange={handleChange}
+              className="w-full border rounded-md px-3 py-2"
+              required
+            />
+          </div>
+
+
+
+            {/* Artifact Type (Dropdown) */}
+               <div className="mb-4">
+            <label className="block text-sm font-medium mb-1">Artifact Type</label>
+            <select
+              name="artifactType"
+              value={updatedData.artifactType || ""}
+              onChange={handleChange}
+              className="w-full border rounded-md px-3 py-2"
+              required
+            >
+              <option value="" disabled>
+                Select a type
+              </option>
+              {artifactTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
           </div>
 
           {/* Historical Context */}
@@ -130,37 +165,26 @@ const UpdateArtifact = () => {
             />
           </div>
 
-          {/* User Name */}
+          {/* Discovered At */}
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">User Name</label>
+            <label className="block text-sm font-medium mb-1">Discovered At</label>
             <input
               type="text"
-              name="userName"
-              value={user.displayName || ""}
-              disabled
-              className="w-full border rounded-md px-3 py-2 bg-gray-200"
+              name="discoveredAt"
+              value={updatedData.discoveredAt || ""}
+              onChange={handleChange}
+              className="w-full border rounded-md px-3 py-2"
+              required
             />
           </div>
 
-          {/* User Email */}
+          {/* Created At */}
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">User Email</label>
-            <input
-              type="email"
-              name="email"
-              value={user.email || ""}
-              disabled
-              className="w-full border rounded-md px-3 py-2 bg-gray-200"
-            />
-          </div>
-
-          {/* Artifact Type */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">Artifact Type</label>
+            <label className="block text-sm font-medium mb-1">Created At</label>
             <input
               type="text"
-              name="artifactType"
-              value={updatedData.artifactType || ""}
+              name="createdAt"
+              value={updatedData.createdAt || ""}
               onChange={handleChange}
               className="w-full border rounded-md px-3 py-2"
               required
