@@ -48,7 +48,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-green-900 rounded-lg">
+    <div className="navbar bg-black rounded-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <button

@@ -20,6 +20,7 @@ View Added Artifacts: Users can view the artifacts they have personally added.
 npm Packages Used
 
 AOS 
+Framer motion
 axios: Used for making HTTP requests to interact with APIs.
 react-router-dom: Enables dynamic routing in the application.
 sweetalert2: Used for creating customizable and user-friendly alert dialogs.
