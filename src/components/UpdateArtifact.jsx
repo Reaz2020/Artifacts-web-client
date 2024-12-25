@@ -28,6 +28,7 @@ const UpdateArtifact = () => {
       
       
       })
+      
       .catch((err) => {
         setError(err.message); // Seting error if fetch fails
         setLoading(false); // Stoping loading
@@ -55,8 +56,13 @@ const UpdateArtifact = () => {
       confirmButtonText: "Yes, update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure
-          .put(`/update-artifact/${artifactId}`, updatedData)
+
+
+        const email=user.email;
+
+       axiosSecure
+       .put(`/update-artifact/${artifactId}?email=${email}`, updatedData)
+
           .then((response) => {
             Swal.fire("Updated!", "Artifact has been updated successfully.", "success");
             navigate("/my-artifacts");

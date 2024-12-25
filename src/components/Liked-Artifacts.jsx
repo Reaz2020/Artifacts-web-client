@@ -13,6 +13,7 @@ const LikedArtifacts = () => {
 
   useEffect(() => { 
     if (user) {
+      
       // Fetch liked artifacts when the user is available
       axiosSecure
       .post(`/liked-artifacts`, { email: user.email })

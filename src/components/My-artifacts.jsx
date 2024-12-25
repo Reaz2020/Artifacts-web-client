@@ -58,7 +58,7 @@ const MyArtifacts = () => {
       if (result.isConfirmed) {
         // Perform the deletion if confirmed
         axiosSecure
-          .delete(`/delete-artifact/${id}`)
+          .delete(`/delete-artifact/${id}?email=${user.email}`)
           .then((response) => {
             setArtifacts(artifacts.filter(artifact => artifact._id !== id)); // Remove artifact from state
             Swal.fire(

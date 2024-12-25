@@ -201,9 +201,9 @@ const Navbar = () => {
             <li className="btn bg-violet-500 text-white">
               <NavLink to="/login">Login</NavLink>
             </li>
-            <li className="btn bg-violet-500 text-white">
+            {/* <li className="btn bg-violet-500 text-white">
               <NavLink to="/register">Register</NavLink>
-            </li>
+            </li> */}
           </div>
         )}
       </div>
