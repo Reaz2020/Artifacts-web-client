@@ -11,8 +11,8 @@ const ErrorPage = () => {
 
     return (
         <div className="text-center my-36 text-3xl">
-            <div>
-                We HaVE nOthing here  ❌
+            <div className='text-6xl'>
+                We HaVE nOthing here  ❌ 404 
             </div>
             <button
                 onClick={handleGoHome}

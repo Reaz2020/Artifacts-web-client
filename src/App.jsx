@@ -8,7 +8,6 @@ function App() {
 
   return (
     <>
-    
  <div className='bg-red-400'>kkk</div>
  <button className="btn btn-primary">Click Me</button>
 
