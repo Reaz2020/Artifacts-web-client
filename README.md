@@ -19,6 +19,7 @@ View Added Artifacts: Users can view the artifacts they have personally added.
 
 npm Packages Used
 
+React Player
 AOS 
 Framer motion
 axios: Used for making HTTP requests to interact with APIs.

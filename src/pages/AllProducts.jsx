@@ -75,10 +75,10 @@ const AllArtifacts = () => {
                             className="w-full h-48 object-cover rounded-t-lg"
                         />
                         <h3 className="text-xl font-bold mt-4">{artifact.artifactType}</h3>
-                        <p className="text-gray-600">Historical Context: {artifact.historicalContext}</p>
-                        <p className="text-gray-600">Created At: {artifact.createdAt}</p>
+                        {/* <p className="text-gray-600">Historical Context: {artifact.historicalContext}</p> */}
+                        {/* <p className="text-gray-600">Created At: {artifact.createdAt}</p> */}
                         <p className="text-gray-600">Discovered At: {artifact.discoveredAt}</p>
-                        <p className="text-gray-600">Discovered By: {artifact.discoveredBy}</p>
+                        {/* <p className="text-gray-600">Discovered By: {artifact.discoveredBy}</p> */}
                         <p className="mt-2">{artifact.description}</p>
                         <p className="mt-2">Liked by <span className="text-red-500">{artifact.like_count}</span> person</p>
 

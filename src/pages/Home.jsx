@@ -7,6 +7,7 @@ import { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ReactPlayer from 'react-player';
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -20,6 +21,14 @@ const Home = () => {
 
   return (
     <div>
+          <ReactPlayer 
+        url="src/components-home/artifact.mp3" 
+        playing={true} // Play automatically
+        loop={true}    // Loop the audio
+        volume={0.5}   // Set volume level (0 to 1)
+        width="0"      // Hide player (for background audio)
+        height="0"     // Hide player
+      />
       <div
         className="overflow-hidden h-20 flex items-center border-2 w-full"
         onMouseEnter={() => setIsHovered(true)} // Stop on hover

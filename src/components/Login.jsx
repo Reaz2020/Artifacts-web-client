@@ -182,7 +182,7 @@ const handleGoogleSignIn = () => {
                         alignItems: 'center'
                     }}
                 >
-                    Sign in with Google
+                    Sign in/ Sign up with Google
                 </button>
 
                 {user && (

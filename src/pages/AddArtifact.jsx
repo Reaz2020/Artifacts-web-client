@@ -42,14 +42,14 @@ const AddArtifact = () => {
             like_count: 0, // Initialize like_count with 0
             likers: [], // Initialize likers as an empty array
             owner_email: user?.email, // To track who added this artifact
-            owner_name: user?.displayName // Add owner name (displayName)
+            owner_name: user?.displayName // 
         };
     
         try {
-            // Use axiosSecure for the POST request
+            // Using axiosSecure for the POST request
             axiosSecure.post('/add-artifact', artifactData, { withCredentials: true })
                 .then((response) => {
-                    // Handle the response after successful submission
+                    // Handling the response after successful submission
                     if (response.status === 200) {
                         Swal.fire({
                             title: 'Success!',
@@ -70,7 +70,7 @@ const AddArtifact = () => {
                     }
                 })
                 .catch((error) => {
-                    // Handle errors if the request fails
+                    // Handles errors if the request fails
                     setError('An error occurred while adding the artifact.');
                     console.error(error);
                 });
@@ -79,7 +79,7 @@ const AddArtifact = () => {
         }
     };
 
-    // Navigate to artifact details page
+    // Navigates to artifact details page
     const handleDetails = (id) => {
         navigate(`/artifact/${id}`);
     };
