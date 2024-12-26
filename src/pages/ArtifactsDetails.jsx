@@ -126,7 +126,8 @@ const ArtifactDetails = () => {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">Artifact Details</h1>
-      <div className="max-w-sm mx-auto bg-white rounded-lg border border-gray-200 shadow-lg overflow-hidden">
+    <div className='p-4 bg-transparent'>
+       <div className=" bg-slate-300 max-w-sm mx-auto  rounded-lg border border-gray-200 shadow-lg overflow-hidden p-2 ">
         <img
           src={artifact.artifactImage}
           alt={artifact.artifactName}
@@ -152,7 +153,8 @@ const ArtifactDetails = () => {
             </button>
           )}
         </div>
-      </div>
+       </div>
+    </div>  
     </div>
   );
 };

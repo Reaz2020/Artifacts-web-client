@@ -45,7 +45,7 @@ const LikedArtifacts = () => {
       ) : (
 <ul className=" text-center flex flex-wrap">
   {likedArtifacts.map((artifact) => (
-    <li className=" border-2 sm:flex flex-col md:flex-row items-center justify-center" key={artifact._id} style={{ margin: "10px", padding: "10px", borderRadius: "5px" }}>
+    <li className=" border-2 sm:flex flex-col md:flex-row items-center justify-center bg-violet-200" key={artifact._id} style={{ margin: "10px", padding: "10px", borderRadius: "5px" }}>
       
      <div className="flex items-center justify-center ">
        

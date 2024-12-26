@@ -22,7 +22,9 @@ const Home = () => {
   return (
     <div> 
           <ReactPlayer 
-        url="src/components-home/artifact.mp3"  //this only works in locl host 
+         url="src/components-home/artifact.mp3"  //this only works in locl host 
+        //  url="https://jumpshare.com/s/HjoM2z750ouk8vKe4GgI" 
+        
         playing={true} 
         loop={true}    
         volume={0.2}   

@@ -67,7 +67,7 @@ const AllArtifacts = () => {
                 {artifacts.map((artifact) => (
                     <div
                         key={artifact._id}
-                        className="border rounded-lg p-4 shadow-md bg-white"
+                        className="border rounded-lg p-4 shadow-md bg-gray-200"
                     >
                         <img
                             src={artifact.artifactImage}
