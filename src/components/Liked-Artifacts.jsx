@@ -14,21 +14,21 @@ const LikedArtifacts = () => {
   useEffect(() => { 
     if (user) {
       
-      // Fetch liked artifacts when the user is available
+      
       axiosSecure
       .post(`/liked-artifacts`, { email: user.email })
       .then((response) => {
           setLikedArtifacts(response.data.artifacts); 
-          setLoading(false); // Set loading to false after data is fetched
+          setLoading(false); 
       })
         .catch((err) => {
           setError("Failed to fetch liked artifacts");
           setLoading(false);
         });
     }
-  }, [user]); // Only run the effect when the user changes
+  }, [user]); 
 
-  // Display loading, error, or the list of liked artifacts
+ 
   if (loading) {
     return <div><Loading></Loading> </div>;
   }
@@ -45,7 +45,7 @@ const LikedArtifacts = () => {
       ) : (
 <ul className=" text-center flex flex-wrap">
   {likedArtifacts.map((artifact) => (
-    <li className=" border-2 flex items-center justify-center" key={artifact._id} style={{ margin: "10px", padding: "10px", borderRadius: "5px" }}>
+    <li className=" border-2 sm:flex flex-col md:flex-row items-center justify-center" key={artifact._id} style={{ margin: "10px", padding: "10px", borderRadius: "5px" }}>
       
      <div className="flex items-center justify-center ">
        

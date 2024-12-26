@@ -15,19 +15,19 @@ const Home = () => {
        useEffect(() => {
         AOS.init({
             duration: 2000, 
-            once: true, // Only animate once when in view
+            once: true, 
         });
     }, []);
 
   return (
-    <div>
+    <div> 
           <ReactPlayer 
-        url="src/components-home/artifact.mp3" 
-        playing={true} // Play automatically
-        loop={true}    // Loop the audio
-        volume={0.5}   // Set volume level (0 to 1)
-        width="0"      // Hide player (for background audio)
-        height="0"     // Hide player
+        url="src/components-home/artifact.mp3"  //this only works in locl host 
+        playing={true} 
+        loop={true}    
+        volume={0.2}   
+        width="0"      
+        height="0"     
       />
       <div
         className="overflow-hidden h-20 flex items-center border-2 w-full"
@@ -36,7 +36,7 @@ const Home = () => {
       >
         <motion.div
           className="flex space-x-28 min-w-max text-3xl font-bold"
-          animate={isHovered ? { x: "0%" } : { x: ["0%", "-100%"] }} // Conditional animation
+          animate={isHovered ? { x: "0%" } : { x: ["0%", "-100%"] }} 
           transition={{
             duration: 100,
             ease: "linear",

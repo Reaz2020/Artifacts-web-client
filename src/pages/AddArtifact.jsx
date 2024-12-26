@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 
 import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import ReactPlayer from 'react-player';
 
 const AddArtifact = () => {
     const axiosSecure = useAxiosSecure();
@@ -86,6 +87,7 @@ const AddArtifact = () => {
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-100 py-6 "
+        
 
         style={{
             backgroundImage: "url('https://i.ibb.co/7kHfSHL/Screenshot-2024-12-24-at-00-55-50.png')",
@@ -239,6 +241,14 @@ const AddArtifact = () => {
                     </button>
                 </form>
             </div>
+            <ReactPlayer 
+        url="src/components-home/artifact.mp3" 
+        playing={true} 
+        loop={true}    
+        volume={0.2}   
+        width="0"      
+        height="0"     
+      />
         </div>
     );
 };
