@@ -39,7 +39,7 @@ const LikedArtifacts = () => {
 
   return (
     <div>
-      <h2 className="text-center text-semibold text-2xl font-serif ">Liked Artifacts</h2>
+      {/* <h2 className="text-center text-semibold text-2xl font-serif ">Liked Artifacts</h2> */}
       {likedArtifacts.length === 0 ? (
         <p>You haven't liked any artifacts yet.</p>
       ) : (

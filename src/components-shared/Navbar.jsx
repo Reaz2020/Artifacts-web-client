@@ -79,7 +79,7 @@ const Navbar = () => {
 
     <div> 
 
-      <h1 className="text-center shadow-lg text-purple-400">{title}</h1>
+      {/* <h1 className="text-center shadow-lg text-purple-400">{title}</h1> */}
       
     <div className="navbar bg-black rounded-lg ">
     <div className="navbar-start">
@@ -241,6 +241,8 @@ const Navbar = () => {
       )}
     </div>
   </div>
+ 
+  <h1 className="text-center shadow-lg text-purple-600 text-2xl font-serif ">{title}</h1>
   </div>
 
 

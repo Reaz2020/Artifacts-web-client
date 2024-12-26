@@ -50,7 +50,7 @@ const AllArtifacts = () => {
 
     return (
         <div className="p-8">
-            <h2 className="text-center text-2xl font-bold mb-6">All Artifacts</h2>
+            {/* <h2 className="text-center text-2xl font-bold mb-6">All Artifacts</h2> */}
 
             {/* Search input */}
             <div className="mb-6  flex justify-center items-center">

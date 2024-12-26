@@ -82,7 +82,7 @@ const MyArtifacts = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold mb-4">My added Artifacts</h1>
+      {/* <h1 className="text-2xl font-semibold mb-4">My added Artifacts</h1> */}
       {artifacts.length === 0 ? (
         <p>No artifacts added by you yet.</p>
       ) : (
