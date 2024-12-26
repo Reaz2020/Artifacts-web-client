@@ -18,7 +18,7 @@ const FeaturedArtifacts = () => {
           setArtifacts(response.data);
         } else {
           console.error("Unexpected response data format:", response.data);
-          setArtifacts([]); // Fallback to empty array
+          setArtifacts([]); 
         }
       } catch (error) {
         console.error("Error fetching featured artifacts:", error);
@@ -38,7 +38,7 @@ const FeaturedArtifacts = () => {
   }
 
   return (
-    <div className="p-8 bg-gray-100">
+    <div className="p-8 rounded-md">
       <h2 className="text-3xl font-bold text-center text-purple-600 mb-6">
         Featured Artifacts
       </h2>

@@ -1,13 +1,13 @@
 import { useState, useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider"; // Assuming you have AuthProvider
+import { AuthContext } from "../provider/AuthProvider"; 
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
-import { updateProfile } from "firebase/auth"; // Make sure updateProfile is imported
-import { auth } from '../firebase/firebase.config'; // Import the auth object
+import { updateProfile } from "firebase/auth"; 
+import { auth } from '../firebase/firebase.config'; 
 import { Link } from "react-router-dom";
 
 const Register = () => {
-    const { user, createUser, setUser } = useContext(AuthContext); // Assuming `createUser` and `setUser` are in context
+    const { user, createUser, setUser } = useContext(AuthContext); 
     const [error, setError] = useState('');
     const [name, setName] = useState(''); // State for name
     const [photoURL, setPhotoURL] = useState(''); // State for photo URL
@@ -39,8 +39,8 @@ const Register = () => {
             setError(passwordError); // Set error message
             Swal.fire({
                 title: 'Password Validation Failed!',
-                text: passwordError,  // Show password validation error
-                icon: 'error', // 'error' is the correct icon name
+                text: passwordError,  
+                icon: 'error', 
                 confirmButtonText: 'Retry'
             });
             return;
@@ -53,12 +53,12 @@ const Register = () => {
             // Update user profile if name or photo URL are provided
             if (auth.currentUser) {
                 await updateProfile(auth.currentUser, {
-                    displayName: name || result.user.displayName, // Set provided name or Firebase name
-                    photoURL: photoURL || result.user.photoURL,  // Set provided photo URL or Firebase photo URL
+                    displayName: name || result.user.displayName, 
+                    photoURL: photoURL || result.user.photoURL, 
                 });
             }
 
-            // Optionally set the user in the context
+           
             const userToSet = {
                 email: result.user.email,
                 displayName: name || result.user.displayName || 'New User',

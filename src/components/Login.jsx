@@ -15,7 +15,7 @@ const Login = () => {
     navigate(location?.state || "/");
   };
 
-    // Handle form submit
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -25,7 +25,7 @@ const Login = () => {
 
         emailPasswordSignIn(email, password)
             .then(result => {
-                console.log('sign in', result.user.email);
+                // console.log('sign in', result.user.email);
 
                 // const user={email:email}
 
@@ -82,7 +82,7 @@ const handleGoogleSignIn = () => {
             handleNavigate();
         })
         .catch(error => {
-            console.error("Google sign-in failed:", error); // Handle any errors during Google sign-in
+            console.error("Google sign-in failed:", error); 
         });
 };
 

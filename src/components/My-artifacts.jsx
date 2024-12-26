@@ -7,10 +7,10 @@ import Loading from './Loading';
 
 const MyArtifacts = () => {
   const axiosSecure = useAxiosSecure();
-  const { user } = useContext(AuthContext); // Get the user from AuthContext
-  const [artifacts, setArtifacts] = useState([]); // State to store fetched artifacts
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(null); // Error state
+  const { user } = useContext(AuthContext);
+  const [artifacts, setArtifacts] = useState([]); 
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
   const navigate = useNavigate(); 
 
   useEffect(() => {
@@ -32,11 +32,11 @@ const MyArtifacts = () => {
   }, [user]);
 
   if (loading) {
-    return <div><Loading></Loading> </div>; // Show loading message
+    return <div><Loading></Loading> </div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>; // Show error message
+    return <div>Error: {error}</div>; 
   }
 
   const handleUpdate = (id) => {
