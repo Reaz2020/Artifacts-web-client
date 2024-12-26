@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import ReactPlayer from 'react-player';
+import music from '../assets/artifact.mp3'
 
 const AddArtifact = () => {
     const axiosSecure = useAxiosSecure();
@@ -243,7 +244,7 @@ const AddArtifact = () => {
             </div>
             <ReactPlayer 
         // url="src/components-home/artifact.mp3" 
-        url="/artifact.mp3" 
+        url={music} 
         playing={true} 
         loop={true}    
         volume={0.2}   

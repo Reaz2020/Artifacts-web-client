@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import ReactPlayer from 'react-player';
+import music from '../assets/artifact.mp3'
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -22,7 +23,7 @@ const Home = () => {
   return (
     <div> 
           <ReactPlayer 
-         url="src/public/artifact.mp3"  //this only works in locl host 
+         url={music}  //this only works in locl host 
         //  url="https://jumpshare.com/s/HjoM2z750ouk8vKe4GgI" 
         
         playing={true} 

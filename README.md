@@ -19,6 +19,8 @@ View Added Artifacts: Users can view the artifacts they have personally added.
 
 npm Packages Used
 
+
+react-loader-spinner
 React Player
 AOS 
 Framer motion
