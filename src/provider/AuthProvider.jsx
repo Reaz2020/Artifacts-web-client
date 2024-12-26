@@ -5,14 +5,20 @@ import {  onAuthStateChanged,signOut,signInWithEmailAndPassword,createUserWithEm
 import { auth } from '../firebase/firebase.config';
 import axios from "axios";
 
+
 // Create Auth Context
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+    
+   
 
     const provider = new GoogleAuthProvider();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
+
+
 
  
 //registering user 
@@ -109,6 +115,7 @@ function signOutUser(){
         emailPasswordSignIn, 
         googleSignIn,signOutUser,
         setUser,setLoading
+
     
     };
 

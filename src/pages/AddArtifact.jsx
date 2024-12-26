@@ -242,7 +242,8 @@ const AddArtifact = () => {
                 </form>
             </div>
             <ReactPlayer 
-        url="src/components-home/artifact.mp3" 
+        // url="src/components-home/artifact.mp3" 
+        url="/artifact.mp3" 
         playing={true} 
         loop={true}    
         volume={0.2}   
