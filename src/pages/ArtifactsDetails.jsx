@@ -4,6 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { AuthContext } from "../provider/AuthProvider";
+import Loading from "../components/Loading";
 
 const ArtifactDetails = () => {
   const { user } = useContext(AuthContext); // Access the authenticated user
@@ -112,7 +113,7 @@ const ArtifactDetails = () => {
   };
 
   if (loading) {
-    return <div>Loading . . . .. </div>; // Show loading message while fetching data
+    return <div><Loading></Loading></div>; // Show loading message while fetching data
   }
 
   if (error) {

@@ -30,3 +30,5 @@ sweetalert2: Used for creating customizable and user-friendly alert dialogs.
 swiper: A modern mobile touch slider for creating responsive sliders.
 slick-carousel: Used for implementing responsive sliders and carousels.
 jsonwebtoken: Used for generating and verifying JWT tokens for authentication and secure communication.
+
+To run and test it , someone needs to clone the repo and install dependencies like  express and node 
