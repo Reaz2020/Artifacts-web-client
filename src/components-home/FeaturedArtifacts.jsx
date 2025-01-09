@@ -47,7 +47,7 @@ const FeaturedArtifacts = () => {
           <Loading />
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
           {artifacts.map((artifact) => (
             <div
               key={artifact._id}
