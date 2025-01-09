@@ -41,7 +41,7 @@ const Banner = () => {
                 <p className="mb-5">
                   Explore artifacts that reveal the triumphs, struggles, and dreams of humanity.
                 </p>
-                <button className="btn btn-primary" onClick={handleNavigateToLogin}>
+                <button className="btn bg-purple-600" onClick={handleNavigateToLogin}>
                   Get Started
                 </button>
               </div>
@@ -63,7 +63,7 @@ const Banner = () => {
                 <p className="mb-5">
                   Discover the objects that connect us to the lives and legacies of our ancestors.
                 </p>
-                <button className="btn btn-primary" onClick={handleNavigateToLogin}>
+                <button className="btn bg-purple-600" onClick={handleNavigateToLogin}>
                   Get Started
                 </button>
               </div>
@@ -85,7 +85,7 @@ const Banner = () => {
                 <p className="mb-5">
                   Step into the stories of civilizations through artifacts that shaped our history.
                 </p>
-                <button className="btn btn-primary" onClick={handleNavigateToLogin}>
+                <button className="btn bg-purple-600" onClick={handleNavigateToLogin}>
                   Get Started
                 </button>
               </div>
