@@ -169,17 +169,41 @@ const Navbar = () => {
           Home
         </NavLink>
         {user && (
-          <NavLink
-            to="/add-item"
-            className={({ isActive }) =>
-              isActive
-                ? "btn bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-white border-0"
-                : "btn bg-blue-200 hover:bg-blue-300 text-black border-0"
-            }
-          >
-            Add Artifact
-          </NavLink>
-        )}
+  <>
+    <NavLink
+      to="/add-item"
+      className={({ isActive }) =>
+        isActive
+          ? "btn bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-white border-0"
+          : "btn bg-blue-200 hover:bg-blue-300 text-black border-0"
+      }
+    >
+      Add Artifact
+    </NavLink>
+    <NavLink
+      to="/my-artifacts"
+      className={({ isActive }) =>
+        isActive
+          ? "btn bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-white border-0"
+          : "btn bg-blue-200 hover:bg-blue-300 text-black border-0"
+      }
+    >
+      My Artifacts
+    </NavLink>
+    <NavLink
+      to="/liked-artifacts"
+      className={({ isActive }) =>
+        isActive
+          ? "btn bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-white border-0"
+          : "btn bg-blue-200 hover:bg-blue-300 text-black border-0"
+      }
+    >
+      Liked Artifacts
+    </NavLink>
+  </>
+)}
+
+
       </ul>
     </div>
 
