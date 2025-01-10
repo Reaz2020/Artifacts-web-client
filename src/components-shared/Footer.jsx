@@ -1,11 +1,11 @@
+import React from 'react';
+
 const Footer = () => {
   return (
     <div>
       <footer className="footer bg-purple-600 text-neutral-content p-10">
-        <aside className="">
-        {/* https://i.ibb.co/2Y7nxfX/Screenshot-2024-12-23-at-13-07-58.png8 */}
-        <img className="h-15 w-20" src="https://i.ibb.co/2Y7nxfX/Screenshot-2024-12-23-at-13-07-58.png" alt="Screenshot Image" />
-
+        <aside>
+          <img className="h-15 w-20" src="https://i.ibb.co/2Y7nxfX/Screenshot-2024-12-23-at-13-07-58.png" alt="Screenshot Image" />
           <p>
             Artifact Atlas Ltd.
             <br />
@@ -21,9 +21,7 @@ const Footer = () => {
             <li>
               <a href="/contact" className="link link-hover">Contact</a>
             </li>
-            <li>
-              <a href="/privacy-policy" className="link link-hover">Privacy Policy</a>
-            </li>
+            
             <li>
               <a href="/terms-of-service" className="link link-hover">Terms of Service</a>
             </li>
