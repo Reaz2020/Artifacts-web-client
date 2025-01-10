@@ -236,7 +236,7 @@ const AddArtifact = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full py-2 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="w-full py-2 bg-purple-600 text-white font-bold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     >
                         Add Artifact
                     </button>

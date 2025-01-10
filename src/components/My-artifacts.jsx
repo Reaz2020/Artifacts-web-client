@@ -104,7 +104,7 @@ const MyArtifacts = () => {
                 >
                   Update
                 </button>
-                <button className="btn bg-orange-500 text-white px-4 py-2" onClick={() => handleDelete(artifact._id)}>Delete</button>
+                <button className="btn bg-purple-500 text-white px-4 py-2" onClick={() => handleDelete(artifact._id)}>Delete</button>
               </div>
             </div>
           ))}

@@ -85,7 +85,7 @@ const AllArtifacts = () => {
                         {/* "Details" Button to navigate to Artifact Details page */}
                         <Link 
                             to={`/artifact-details/${artifact._id}`} 
-                            className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                            className="mt-4 inline-block px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-blue-700"
                         >
                             Details
                         </Link>
