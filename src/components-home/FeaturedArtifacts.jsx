@@ -76,7 +76,7 @@ const FeaturedArtifacts = () => {
         </div>
       )}
       <div className="text-center">
-        <Link className="btn bg-orange-400" to={'/all-products'}>
+        <Link className="btn bg-purple-500 text-white" to={'/all-products'}>
           See All Artifacts
         </Link>
       </div>
